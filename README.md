@@ -1,4 +1,4 @@
 # Extended Calculator App
 
-Michael Hogan (0Hogan)
-Michael Hamlin (Michael-Hamlin)
+<p>Michael Hogan (0Hogan)</p>
+<p>Michael Hamlin (Michael-Hamlin)</p>
