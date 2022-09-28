@@ -111,6 +111,11 @@ public partial class MainPage : ContentPage
         }
     }
 
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
     void OnPercentage(object sender, EventArgs e)
     {
         if (currentState == 1)
@@ -123,4 +128,6 @@ public partial class MainPage : ContentPage
             OnCalculate(this, null);
         }
     }
+
+    
 }
