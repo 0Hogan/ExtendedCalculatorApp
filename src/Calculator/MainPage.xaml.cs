@@ -9,19 +9,11 @@ public partial class MainPage : ContentPage
         OnClear(this, null);
 
     }
-    /*
-    string currentEntry = "";
-    int currentState = 1;
-    string mathOperator;
-    double firstNumber, secondNumber;
-    string decimalFormat = "N0";
-    */
 
+    bool onNumberInputClearResult = true; // Used to determine when to keep the result of the immediately previous operation to use it in the current operation.
     string inputString = "";        // This will be the expression that we show back to the user.
     string infixExpression = "";    // This will be the expression upon which we perform the calculations.
-    string decimalFormat = "N0";    // The decimal format for displaying to the user.
     System.Collections.Generic.Stack<bool> parenthesesIndicatesSquareRoot = new Stack<bool>();
-    bool onNumberInputClearResult = true;
 
     void OnSelectNumber(object sender, EventArgs e)
     {
@@ -37,12 +29,6 @@ public partial class MainPage : ContentPage
 
         infixExpression += pressed;
         inputString += pressed;
-
-        if (pressed == "." && decimalFormat != "N2")
-        {
-            decimalFormat = "N2";
-        }
-        
 
         this.resultText.Text += pressed;
     }
@@ -99,7 +85,6 @@ public partial class MainPage : ContentPage
 
     void OnClear(object sender, EventArgs e)
     {
-        decimalFormat = "N0";
         infixExpression = "";
         inputString = "";
         this.CurrentCalculation.Text = "0";
