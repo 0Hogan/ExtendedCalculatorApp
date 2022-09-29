@@ -9,118 +9,141 @@ public partial class MainPage : ContentPage
         OnClear(this, null);
 
     }
-
+    /*
     string currentEntry = "";
     int currentState = 1;
     string mathOperator;
     double firstNumber, secondNumber;
     string decimalFormat = "N0";
-    
-    
+    */
+
+    string inputString = "";        // This will be the expression that we show back to the user.
+    string infixExpression = "";    // This will be the expression upon which we perform the calculations.
+    string decimalFormat = "N0";    // The decimal format for displaying to the user.
+    System.Collections.Generic.Stack<bool> parenthesesIndicatesSquareRoot = new Stack<bool>();
+    bool onNumberInputClearResult = true;
 
     void OnSelectNumber(object sender, EventArgs e)
     {
-    
+        if (onNumberInputClearResult)
+        {
+            this.resultText.Text = "";
+            infixExpression = "";
+            inputString = "";
+        }
+        onNumberInputClearResult = false;
         Button button = (Button)sender;
         string pressed = button.Text;
 
-        currentEntry += pressed;
-
-        if ((this.resultText.Text == "0" && pressed == "0")
-            || (currentEntry.Length <= 1 && pressed != "0")
-            || currentState < 0)
-        {
-            this.resultText.Text = "";
-            if (currentState < 0)
-                currentState *= -1;
-        }
+        infixExpression += pressed;
+        inputString += pressed;
 
         if (pressed == "." && decimalFormat != "N2")
         {
             decimalFormat = "N2";
         }
+        
 
         this.resultText.Text += pressed;
     }
 
     void OnSelectOperator(object sender, EventArgs e)
     {
-        LockNumberValue(resultText.Text);
+        onNumberInputClearResult = false;
 
-        currentState = -2;
         Button button = (Button)sender;
         string pressed = button.Text;
-        mathOperator = pressed;            
+        switch (pressed)
+        {
+            case "%": // Percent sign can be rewritten for the infixExpression as "/100" or "x.01".
+                infixExpression += "/100";
+                break;
+            case "mod(": // Modulo expression gets added to the infixExpression as a percent sign.
+                infixExpression += "%(";
+                parenthesesIndicatesSquareRoot.Push(false);
+                break;
+            case "sqrt(": // Square root begins by pushing "(", but will add "^(1/2)" right after the corresponding closing parentheses.
+                infixExpression += "(";
+                parenthesesIndicatesSquareRoot.Push(true);
+                break;
+            case "(":    // Normal reaction, but pushes false to the stack to indicate that it's corresponding closing parentheses should NOT be followed by a "^(1/2)"
+                infixExpression += pressed;
+                parenthesesIndicatesSquareRoot.Push(false);
+                break;
+            case ")":
+                if (parenthesesIndicatesSquareRoot.Count <= 0) // If the parentheses stack is empty, there is no corresponding "(", which means the function should simply return without adding the ")" to either infixExpression or the inputString.
+                    return;
+                infixExpression += ")";
+                if (parenthesesIndicatesSquareRoot.Pop())
+                    infixExpression += "^(1/2)";
+                break;
+            case "×": // Multiplication sign looks like an 'x', but it's actually a funky character.
+                infixExpression += "x";
+                break;
+            case "÷": // Division sign is a funky character.
+                infixExpression += "/";
+                break;
+            default:
+                infixExpression += pressed;
+                break;
+        }
+        
+        inputString += pressed;
+        this.resultText.Text += pressed;
     }
 
     private void LockNumberValue(string text)
     {
-        double number;
-        if (double.TryParse(text, out number))
-        {
-            if (currentState == 1)
-            {
-                firstNumber = number;
-            }
-            else
-            {
-                secondNumber = number;
-            }
-
-            currentEntry = string.Empty;
-        }
+        // No longer needed.
     }
 
     void OnClear(object sender, EventArgs e)
     {
-        firstNumber = 0;
-        secondNumber = 0;
-        currentState = 1;
         decimalFormat = "N0";
+        infixExpression = "";
+        inputString = "";
+        this.CurrentCalculation.Text = "0";
         this.resultText.Text = "0";
-        currentEntry = string.Empty;
+        onNumberInputClearResult = true;
     }
 
     void OnCalculate(object sender, EventArgs e)
     {
-        if (currentState == 2)
-        {
-            if(secondNumber == 0)
-                LockNumberValue(resultText.Text);
-
-            double result = Calculator.Calculate(firstNumber, secondNumber, mathOperator);
-
-            this.CurrentCalculation.Text = $"{firstNumber} {mathOperator} {secondNumber}";
-
-            this.resultText.Text = result.ToTrimmedString(decimalFormat);
-            firstNumber = result;
-            secondNumber = 0;
-            currentState = -1;
-            currentEntry = string.Empty;
-        }
+        string result = Convert.ToString(Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(infixExpression))); // Evaluate the given expression and store the result as a string inside result.
+        this.CurrentCalculation.Text = inputString; // Show the original inputted expression
+        this.resultText.Text = result; // Show the result of the operation.
+        onNumberInputClearResult = true; // Ensure that typing in a new number will erase the current result while typing in an operator will use the current result.
+        inputString = result;   // Store the current result in inputString (in case the user wants to build on the result).
+        infixExpression = result; // Store the current result in infixExpression (in case the user wants to build on the result).
     }    
 
     void OnNegative(object sender, EventArgs e)
     {
-        if (currentState == 1)
+        if (onNumberInputClearResult)
         {
-            secondNumber = -1;
-            mathOperator = "×";
-            currentState = 2;
-            OnCalculate(this, null);
+            this.resultText.Text = "";
+            infixExpression = "";
+            inputString = "";
+        }
+
+        if (infixExpression.Length == 0 || Calculator.isAnOperator(Convert.ToString(infixExpression[infixExpression.Length - 1])))
+        {
+            infixExpression += "(0-1)*";
+            inputString += "-";
+            this.resultText.Text += "-";
+        }
+        else
+        {
+            infixExpression += "*(0-1)";
+            inputString += "×(-1)";
+            this.resultText.Text += "×(-1)";
         }
     }
 
     void OnPercentage(object sender, EventArgs e)
     {
-        if (currentState == 1)
-        {
-            LockNumberValue(resultText.Text);
-            decimalFormat = "N2";
-            secondNumber = 0.01;
-            mathOperator = "×";
-            currentState = 2;
-            OnCalculate(this, null);
-        }
+        inputString += '%';
+        infixExpression += "/100";
+        this.resultText.Text += "%";
     }
 }
