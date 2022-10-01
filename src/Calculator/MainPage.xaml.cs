@@ -7,13 +7,15 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         OnClear(this, null);
-
+        inputString = "0";
+        infixExpression = "0";
+        onNumberInputClearResult = true;
     }
 
     bool onNumberInputClearResult = true; // Used to determine when to keep the result of the immediately previous operation to use it in the current operation.
-    string inputString = "";        // This will be the expression that we show back to the user.
-    string infixExpression = "";    // This will be the expression upon which we perform the calculations.
-    System.Collections.Generic.Stack<bool> parenthesesIndicatesSquareRoot = new Stack<bool>();
+    string inputString = "0";        // This will be the expression that we show back to the user.
+    string infixExpression = "0";    // This will be the expression upon which we perform the calculations.
+    System.Collections.Generic.Stack<bool> parenthesesIndicatesSquareRoot = new Stack<bool>(); // A stack to indicate whether the closing parentheses of a pair of parentheses should be followed by an exponent call (This is really only used for the "square root" operation.
 
     void OnSelectNumber(object sender, EventArgs e)
     {
@@ -78,15 +80,10 @@ public partial class MainPage : ContentPage
         this.resultText.Text += pressed;
     }
 
-    private void LockNumberValue(string text)
-    {
-        // No longer needed.
-    }
-
     void OnClear(object sender, EventArgs e)
     {
-        infixExpression = "";
-        inputString = "";
+        infixExpression = "0";
+        inputString = "0";
         this.CurrentCalculation.Text = "0";
         this.resultText.Text = "0";
         onNumberInputClearResult = true;
@@ -94,12 +91,16 @@ public partial class MainPage : ContentPage
 
     void OnCalculate(object sender, EventArgs e)
     {
-        string result = Convert.ToString(Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(infixExpression))); // Evaluate the given expression and store the result as a string inside result.
+        string result = Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(infixExpression)); // Evaluate the given expression and store the result as a string inside result.
         this.CurrentCalculation.Text = inputString; // Show the original inputted expression
         this.resultText.Text = result; // Show the result of the operation.
         onNumberInputClearResult = true; // Ensure that typing in a new number will erase the current result while typing in an operator will use the current result.
+        if (result[0] == '-')
+            infixExpression = "(0" + result + ")";
+        else
+            infixExpression = result; // Store the current result in infixExpression (in case the user wants to build on the result).
         inputString = result;   // Store the current result in inputString (in case the user wants to build on the result).
-        infixExpression = result; // Store the current result in infixExpression (in case the user wants to build on the result).
+        
     }    
 
     void OnNegative(object sender, EventArgs e)
@@ -109,6 +110,7 @@ public partial class MainPage : ContentPage
             this.resultText.Text = "";
             infixExpression = "";
             inputString = "";
+            onNumberInputClearResult = false;
         }
 
         if (infixExpression.Length == 0 || Calculator.isAnOperator(Convert.ToString(infixExpression[infixExpression.Length - 1])))

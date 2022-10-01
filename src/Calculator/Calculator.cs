@@ -27,6 +27,9 @@ public static class Calculator
             case "x": // Another multiplication sign.
                 result = value1 * value2;
                 break;
+            case "*": // Another multiplication sign.
+                result = value1 * value2;
+                break;
             case "+": // Addition
                 result = value1 + value2;
                 break;
@@ -39,8 +42,9 @@ public static class Calculator
     }
 
     // Takes in a mathematical prefix expression as a string and returns the result. STILL NEEDS TO BE DEFINED.
-    public static double EvaluatePrefixExpression(string prefix)
+    public static string EvaluatePrefixExpression(string prefix)
     {
+        string errorMessage = "";
         double result = 0.0;
         int numberOfOperands = 0;
         int numberOfOperations = 0;
@@ -59,6 +63,7 @@ public static class Calculator
         // Split the prefix string into individual operators/operands.
         string[] splitPrefix = prefix.Split('#');
         int splitPrefixSize = splitPrefix.Length;
+        errorMessage = "";
         for (int i = 0; i < numberOfOperations; i++)
         {
             int operatorIndex = 0;
@@ -66,38 +71,38 @@ public static class Calculator
             int operand2Index = 2;
             
             // Slide over the array until we find an operator immediately followed by two numbers. 
-            while (!isAnOperator(splitPrefix[operatorIndex]) || !isNumeric(splitPrefix[operand1Index]) || !isNumeric(splitPrefix[operand2Index]))
+            while (!isAnOperator(splitPrefix[operatorIndex]) || !isNumeric(splitPrefix[operand1Index])  || !isNumeric(splitPrefix[operand2Index]) )
             {
                 operatorIndex++;
                 operand1Index++;
                 operand2Index++;
                 if (operand2Index >= splitPrefixSize || operand2Index >= splitPrefix.Length)
                 {
-                    string errorMessage = prefix + " => " + String.Join(null,splitPrefix);
                     throw new Exception(errorMessage);
                 }
             }
-            
+
             double operand1 = Convert.ToDouble(splitPrefix[operand1Index]);
             double operand2 = Convert.ToDouble(splitPrefix[operand2Index]);
             string operatorToken = splitPrefix[operatorIndex];
-            
             // Calculate the result of the operation.
             result = Calculate(operand1, operand2, operatorToken);
+            if (result == 0)
+                throw new Exception();
 
             // Store the result back in the array of strings.
             splitPrefix[operatorIndex] = Convert.ToString(result);
-            
+
             // Shrink the array and get rid of the numbers already used. (splitPrefixSize uses the operator and the two operands, but keeps the result of the operation for a net loss of 2 elements).
             for (int j = operand2Index; j + 1 < splitPrefixSize; j++)
             {
                 splitPrefix[j - 1] = splitPrefix[j + 1];
             }
             splitPrefixSize -= 2;
+            
         }
-        if (numberOfOperations == 0 && result == 0 && prefix.Length > 0 && isNumeric(prefix[0]))
-            result = Convert.ToDouble(prefix);
-        return result;
+        return splitPrefix[0];
+
     }
 
     // Takes in an infix expression and converts it into a prefix expression (Thereby eliminating any parentheses from the expression). NOTE: DOES NOT CURRENTLY SUPPORT 5(4+3) OR SUCH EXPRESSIONS. MUST BE EXPLICIT LIKE 5*(4+3).
@@ -111,15 +116,17 @@ public static class Calculator
 
         // Scan the reversed infix expression.
         for (int i = 0; i < reversedInfix.Length; i++)
-        {
+        {   
             // This case is a little weird. Since reversedInfix is, well, reversed, '(' is now the closing parentheses and '(' is now the opening parentheses. Since this is a closing parentheses, we want to pop operators off the top of the token stack and into the prefix string until we come across the opening parentheses (')').
             if (reversedInfix[i] == '(')
             {
                 while (tokens.Count > 0 && tokens.Peek() != ')')
                 {
+                    if (prefix[prefix.Length - 1] != '#')
+                        prefix += '#';
                     prefix += tokens.Pop();
                 }
-                if (tokens.Count > 0)
+                if (tokens.Count > 0 && tokens.Peek() == ')')
                     tokens.Pop(); // Get rid of the opening parentheses.
                 continue;
             }
@@ -131,16 +138,12 @@ public static class Calculator
                 continue;
             }
 
-            // Add delimiters between all operators and operands (but not on either end of the expression.)
-            if (i > 0 && i < reversedInfix.Length)
-            {
-                // If the current character is not a number (or decimal point), but the last character added to the prefix string is a number, add '#' to serve as a delimiter between numbers.
-                if (!isNumeric(reversedInfix[i]) && prefix.Length > 0 && isNumeric(prefix[prefix.Length - 1]) && (prefix[prefix.Length - 1] != '#'))
-                    prefix += '#';
-                // Or if the current character is a number but the last character added to the prefix string is not a number (and not '#'), add '# to serve as a delimiter between numbers.
-                else if (isNumeric(reversedInfix[i]) && prefix.Length > 1 &&!isNumeric(prefix[prefix.Length - 1]) && (prefix[prefix.Length - 1] != '#'))
-                    prefix += '#';
-            }
+            // If the current character is not a number (or decimal point), but the last character added to the prefix string is a number, add '#' to serve as a delimiter between numbers.
+            if (!isNumeric(reversedInfix[i]) && prefix.Length > 0 && isNumeric(prefix[prefix.Length - 1]) && (prefix[prefix.Length - 1] != '#'))
+                prefix += '#';
+            // Or if the current character is a number but the last character added to the prefix string is not a number (and not '#'), add '# to serve as a delimiter between numbers.
+            else if (isNumeric(reversedInfix[i]) && prefix.Length > 0 &&!isNumeric(prefix[prefix.Length - 1]) && (prefix[prefix.Length - 1] != '#'))
+                prefix += '#';
 
             // If it's a number, push it to the top of the stack.
             if (isNumeric(reversedInfix[i]))
@@ -168,26 +171,20 @@ public static class Calculator
             // If the operator on the top of the tokens stack has a lower priority than the current operator being examined, move the operators from the top of the stack to the prefix string until an operator with equal or higher precedence is found (or the bottom of the stack is encountered). Then push the current operator to the stack.
             while (tokens.Count > 0 && (operatorPrecedence < getPrecedence(tokens.Peek())))
             {
-                try
-                {
-                    if (prefix[prefix.Length - 1] != '#')
-                        prefix += '#';
-                    if (tokens.Peek() != ')')
-                    {
-                        prefix += tokens.Pop(); // Pop an operator off the top of the stack and add it to the back of the prefix string.
-                    }
-                    else
-                        throw new MismatchedParenthesesException();
+                if (prefix[prefix.Length - 1] != '#')
+                    prefix += '#';
 
-                    if (tokens.Count < 1 || (operatorPrecedence >= getPrecedence(tokens.Peek())))
-                        tokens.Push(reversedInfix[i]);
-                }
-                catch(MismatchedParenthesesException)
+                if (tokens.Peek() == '(' || tokens.Peek() == ')')
                 {
-                    // Try to move past the parentheses by just ignoring it.
-                    tokens.Pop();
+                    tokens.Push(reversedInfix[i]);
+                    break;
                 }
+                prefix += tokens.Pop(); // Pop an operator off the top of the stack and add it to the back of the prefix string.
+
+                if (tokens.Count < 1 || (operatorPrecedence >= getPrecedence(tokens.Peek())))
+                    tokens.Push(reversedInfix[i]);
             }
+
         }
 
         // If there are any operators remaining on the tokens stack, pop them off and add them to the prefix string now (after adding a delimiter).
@@ -197,10 +194,10 @@ public static class Calculator
             {
                 if (prefix[prefix.Length - 1] != '#')
                     prefix += '#';
-                if (tokens.Peek() != ')')
+                if (tokens.Peek() != '(' && tokens.Peek() != ')')
+                {
                     prefix += tokens.Pop();
-                else
-                    throw new Exception("Something is messed up in the input. Trying to recover.");
+                }
             }
             catch(MismatchedParenthesesException)
             {
@@ -208,7 +205,7 @@ public static class Calculator
                 tokens.Pop();
             }
         }
- 
+
         // Reverse the prefix string to get the actual prefix notation.
         prefix = reverseString(prefix);
         return prefix;
@@ -253,13 +250,15 @@ public static class Calculator
             return true;
         if (s[0] == '.')
             return true;
+        if (s.Length > 1 && s[1] >= '0' && s[1] <= '9')
+            return true;
         return false;
     }
 
     // Returns true if the inputted string is a valid operator and false otherwise.
     public static bool isAnOperator(string s)
     {
-        if (getPrecedence(s[0]) >= 0)
+        if (s.Length > 0 && getPrecedence(s[0]) >= 0)
             return true;
         else
             return false;
