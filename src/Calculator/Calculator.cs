@@ -87,8 +87,6 @@ public static class Calculator
             string operatorToken = splitPrefix[operatorIndex];
             // Calculate the result of the operation.
             result = Calculate(operand1, operand2, operatorToken);
-            if (result == 0)
-                throw new Exception();
 
             // Store the result back in the array of strings.
             splitPrefix[operatorIndex] = Convert.ToString(result);

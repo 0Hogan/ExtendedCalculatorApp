@@ -1,1 +1,1 @@
-C:\Users\micha\source\repos\extendedCalculatorApp\src\Calculator\Calculator.csproj;x64
+C:\Users\mjhog\Documents\Personal\School\mobileDevelopment\extendedCalculatorApp\src\Calculator\Calculator.csproj;x64

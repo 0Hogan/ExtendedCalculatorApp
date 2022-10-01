@@ -5,19 +5,26 @@
              Title="AppShell"
              xmlns:local="clr-namespace:Calculator">
 
+    <ShellContent
+            Title="Calculator"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+            />
+
+    <ShellContent 
+            Title = "Advanced Calculator"
+            ContentTemplate= "{DataTemplate local:AdvancedCalculatorPage}"
+            Route="AdvancedCalculator"
+            />
+
     <FlyoutItem Title="About Page">
         <Tab>
 
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}"/>
+
         </Tab>
-      
     </FlyoutItem>
-
-    <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate local:AboutPage}"
-            Route="MainPage"/>
-
+    
     <MenuItem Text="Light Theme">
 
     </MenuItem>
