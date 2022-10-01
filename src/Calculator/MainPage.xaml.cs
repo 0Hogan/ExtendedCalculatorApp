@@ -127,10 +127,17 @@ public partial class MainPage : ContentPage
         }
     }
 
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
     void OnPercentage(object sender, EventArgs e)
     {
         inputString += '%';
         infixExpression += "/100";
         this.resultText.Text += "%";
     }
+
+    
 }

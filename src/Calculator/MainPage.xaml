@@ -4,7 +4,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
-          RowDefinitions="2*,*,*,*,*,*"
+          RowDefinitions="2*,*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*">
 
         <Label x:Name="CurrentCalculation"
@@ -76,5 +76,10 @@
         <Button Text="=" Grid.Row="5" Grid.Column="3" 
                Clicked="OnCalculate" />
 
+
+        <Button Text="Navigate to about" Grid.Row="6" Grid.Column="3" 
+               Command="{Binding}" />
+        
+        
     </Grid>
 </ContentPage>
