@@ -5,6 +5,6 @@
              x:Class="Calculator.App">
     <Application.Resources>
         <ResourceDictionary Source="Resources/Themes/LightTheme.xaml" />
-        
+         
     </Application.Resources>
 </Application>

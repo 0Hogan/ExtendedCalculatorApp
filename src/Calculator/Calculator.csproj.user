@@ -6,9 +6,6 @@
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Resources\Themes\DarkTheme.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="Resources\Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

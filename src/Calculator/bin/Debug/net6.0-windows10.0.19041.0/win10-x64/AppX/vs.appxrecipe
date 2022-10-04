@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-10-04T19:32:22.547</Modified>
+      <Modified>2022-10-04T20:16:31.406</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-10-04T19:31:04.918</Modified>
+      <Modified>2022-10-04T20:16:30.993</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.runtimeconfig.json">
       <PackagePath>Calculator.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.dll">
       <PackagePath>Calculator.dll</PackagePath>
-      <Modified>2022-10-04T19:32:21.219</Modified>
+      <Modified>2022-10-04T20:16:29.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Calculator.exe</PackagePath>
-      <Modified>2022-10-04T19:32:21.227</Modified>
+      <Modified>2022-10-04T20:16:29.797</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.9\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1067,7 +1067,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\Project\ClassMAUI\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.deps.json">
       <PackagePath>Calculator.deps.json</PackagePath>
-      <Modified>2022-10-04T19:32:22.408</Modified>
+      <Modified>2022-10-04T20:16:31.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.536\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

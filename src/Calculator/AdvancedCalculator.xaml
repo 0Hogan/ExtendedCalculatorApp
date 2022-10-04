@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.AdvancedCalculatorPage"
-             Title="AdvancedCalculator">
-    <ContentPage.Resources>
-        
-        
-    </ContentPage.Resources>
+             Title="AdvancedCalculator"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
           RowDefinitions="2*,*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*">
@@ -18,15 +16,18 @@
                Text=""
                HorizontalTextAlignment="End"
                VerticalTextAlignment="Start"
-               Grid.Row="0"/>
+               Grid.Row="0"
+               TextColor="{DynamicResource PrimaryTextColor}"/>
 
         <Label x:Name="resultText"
                FontSize="64" FontAttributes="Bold" Text="0"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
-               LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+               LineBreakMode="NoWrap" Grid.ColumnSpan="4" 
+               TextColor="{DynamicResource PrimaryTextColor}"
+               BackgroundColor="{DynamicResource PrimaryColor}"/>
 
-        <BoxView BackgroundColor="{DynamicResource LightGray}" HeightRequest="1"
+        <BoxView  HeightRequest="1"
                  Grid.Row="0" VerticalOptions="End"
                  Grid.ColumnSpan="4"
                  />

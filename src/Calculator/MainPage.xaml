@@ -15,14 +15,16 @@
                Text=""
                HorizontalTextAlignment="End"
                VerticalTextAlignment="Start"
-               Grid.Row="0"/>
+               Grid.Row="0"
+               TextColor="{DynamicResource PrimaryTextColor}"/>
 
         <Label x:Name="resultText"
                FontSize="64" FontAttributes="Bold" Text="0"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
                LineBreakMode="NoWrap" Grid.ColumnSpan="4" 
-               BackgroundColor="{DynamicResource PrimaryColor}"/>
+               BackgroundColor="{DynamicResource PrimaryColor}"
+               TextColor="{DynamicResource PrimaryTextColor}"/>
 
         <BoxView BackgroundColor="{DynamicResource LightGray}" HeightRequest="1"
                  Grid.Row="0" VerticalOptions="End"

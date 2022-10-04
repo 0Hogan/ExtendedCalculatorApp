@@ -45,12 +45,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = Calculator.Resources.Style
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles.xaml
 
-[C:/Users/micha/Project/ClassMAUI/extendedCalculatorApp/src/Calculator/Resources/Themes/DarkTheme.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Calculator.Resources.Themes.DarkTheme.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Themes\DarkTheme.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Themes\DarkTheme.xaml
-
 [C:/Users/micha/Project/ClassMAUI/extendedCalculatorApp/src/Calculator/Resources/Themes/LightTheme.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Calculator.Resources.Themes.LightTheme.xaml
