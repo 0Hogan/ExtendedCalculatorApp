@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.AdvancedCalculatorPage"
              Title="AdvancedCalculator">
-    
+    <ContentPage.Resources>
+        
+        
+    </ContentPage.Resources>
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
           RowDefinitions="2*,*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*">
@@ -23,7 +26,7 @@
                VerticalTextAlignment="End"
                LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
 
-        <BoxView BackgroundColor="{StaticResource LightGray}" HeightRequest="1"
+        <BoxView BackgroundColor="{DynamicResource LightGray}" HeightRequest="1"
                  Grid.Row="0" VerticalOptions="End"
                  Grid.ColumnSpan="4"
                  />

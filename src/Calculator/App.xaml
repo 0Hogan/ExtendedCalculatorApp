@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Calculator"
              x:Class="Calculator.App">
     <Application.Resources>
-        <ResourceDictionary Source="Resources/Styles.xaml" />
+        <ResourceDictionary Source="Resources/Themes/LightTheme.xaml" />
+        
     </Application.Resources>
 </Application>

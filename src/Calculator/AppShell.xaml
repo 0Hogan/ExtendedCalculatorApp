@@ -25,16 +25,16 @@
         </Tab>
     </FlyoutItem>
     
-    <MenuItem Text="Light Theme">
+    <MenuItem Text="Light Theme" Clicked="LightThemeMenuItem_Clicked">
+       
+    </MenuItem>
+    <MenuItem Text="Dark Theme" Clicked="DarkThemeMenuItem_Clicked">
 
     </MenuItem>
-    <MenuItem Text="Dark Theme">
+    <MenuItem Text="Pink Theme" Clicked="PinkThemeMenuItem_Clicked">
 
     </MenuItem>
-    <MenuItem Text="Pink Theme">
-
-    </MenuItem>
-    <MenuItem Text="Green Theme">
+    <MenuItem Text="Green Theme" Clicked="GreenThemeMenuItem_Clicked">
 
     </MenuItem>
 
