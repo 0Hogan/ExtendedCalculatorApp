@@ -12,7 +12,7 @@ public partial class AppShell : Shell
 	private void LightThemeMenuItem_Clicked(object sender, EventArgs e)
 	{
 		Resources["PrimaryColor"] = Colors.White;
-        Resources["PageBackgroundColor"] = Colors.LightGrey;
+        Resources["PageBackgroundColor"] = Color.FromArgb("03a5fc");
         Resources["PrimaryTextColor"] = Colors.Black;
 
 
@@ -29,14 +29,14 @@ public partial class AppShell : Shell
 	private void PinkThemeMenuItem_Clicked(object sender, EventArgs e)
 	{
         Resources["PrimaryColor"] = Colors.Pink;
-        Resources["PageBackgroundColor"] = Colors.LightPink;
+        Resources["PageBackgroundColor"] = Color.FromArgb("c90076");
         Resources["PrimaryTextColor"] = Colors.Black;
 
     }
 
     private void GreenThemeMenuItem_Clicked(object sender, EventArgs e)
 	{
-        Resources["PrimaryColor"] = Colors.Green;
+        Resources["PrimaryColor"] = Color.FromArgb("85ffb1");
         Resources["PageBackgroundColor"] = Colors.DarkGreen;
         Resources["PrimaryTextColor"] = Colors.Black;
 

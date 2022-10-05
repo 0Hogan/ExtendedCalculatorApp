@@ -2,7 +2,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.Resources.Themes.LightTheme">
-    <Color x:Key="PageBackgroundColor">LightGray</Color>
+    <Color x:Key="PageBackgroundColor">#03a5fc</Color>
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
     <Color x:Key="PrimaryColor">White</Color>
     <Color x:Key="SecondaryColor">Black</Color>
