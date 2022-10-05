@@ -1,4 +1,21 @@
 # Extended Calculator App
 
-<p>Michael Hogan (0Hogan)</p>
-<p>Michael Hamlin (Michael-Hamlin)</p>
+## Contributors:
+  <ul>
+    <li>Michael Hogan (0Hogan)
+    <li>Michael Hamlin (Michael-Hamlin)
+  </ul>
+  
+## M.Hogan (0Hogan) Major Commits:
+  <ol>
+    <li> <img src=images/0Hogan1.png>
+    <li> <img src=images/0Hogan2.png>
+    <li> <img src=images/0Hogan3.png>
+  </ol>
+
+## M.Hamlin (Michael-Hamlin) Major Commits:
+  <ol>
+    <li> <img src=images/Michael-Hamlin1.png>
+    <li> <img src=images/Michael-Hamlin2.png>
+    <li> <img src=images/Michael-Hamlin3.png>
+  </ol>
