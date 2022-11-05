@@ -6,12 +6,12 @@ namespace mathsExerciseGenerator.Services
 
     public class MathsExercise
     {
-        private double operand1;
-        private double operand2;
-        private char operation;
-        private double result;
-        private double fakeResult1;
-        private double fakeResult2;
+        public double operand1;
+        public double operand2;
+        public char operation;
+        public double result;
+        public double fakeResult1;
+        public double fakeResult2;
 
         public MathsExercise()
         {
@@ -32,8 +32,8 @@ namespace mathsExerciseGenerator.Services
         {
             Random rnd = new Random();
 
-            int lowerBound = -999;
-            int upperBound = 999;
+            int lowerBound = -99;
+            int upperBound = 99;
             
             double[] operands = new double[2];
 
@@ -193,14 +193,15 @@ namespace mathsExerciseGenerator.Services
     {
         private MathsExercise[] exercises = new MathsExercise[10];
 
-        public MathsExerciseGenerator()
-        {}
+        public MathsExerciseGenerator() {}
 
         public string GetMathsExercisesJsonString()
         {
             for (int i = 0; i < exercises.Length; i++)
                 exercises[i] = new MathsExercise();
-            return JsonConvert.SerializeObject(this);
+            //return JsonConvert.SerializeObject(this);
+            //return exercises[0].GetJsonString();
+            return JsonConvert.SerializeObject(exercises, Formatting.Indented);
         }
     }
 }
