@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.QuizPage"
+             Title="QuizPage">
+    <VerticalStackLayout Padding="20">
+        <Label 
+            Text="Question: 2 + 4 =?"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Padding="30"
+            x:Name="QuestionLabel"
+            />
+        <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button1" Clicked="Button1_Clicked"/>
+        <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button2" Clicked="Button2_Clicked"/>
+        <Button Text="Placeholder for answer 3" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button3" Clicked="Button3_Clicked"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
