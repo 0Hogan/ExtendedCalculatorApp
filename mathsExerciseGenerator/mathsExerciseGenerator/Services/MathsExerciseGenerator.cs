@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 
+
 namespace mathsExerciseGenerator.Services
 {
 
@@ -181,27 +182,24 @@ namespace mathsExerciseGenerator.Services
             }
             return fakeAnswer;
         }
-
-        public string GetJsonString()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-
+        
+        
     }
 
     public class MathsExerciseGenerator
     {
-        private MathsExercise[] exercises = new MathsExercise[10];
-
         public MathsExerciseGenerator() {}
 
         public string GetMathsExercisesJsonString()
         {
+            MathsExercise[] exercises = new MathsExercise[10];
+
             for (int i = 0; i < exercises.Length; i++)
                 exercises[i] = new MathsExercise();
-            //return JsonConvert.SerializeObject(this);
-            //return exercises[0].GetJsonString();
-            return JsonConvert.SerializeObject(exercises, Formatting.Indented);
+
+            var jsonString = JsonConvert.SerializeObject(exercises, Formatting.Indented);
+            // MathsExercise[] exercises = JsonConvert.DeserializeObject<MathsExercise[]>(jsonString);
+            return jsonString;
         }
     }
 }
