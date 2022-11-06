@@ -1,0 +1,1 @@
+C:\Users\micha\Projects\Project2v2\extendedCalculatorApp\src\Calculator\Calculator.csproj;x64

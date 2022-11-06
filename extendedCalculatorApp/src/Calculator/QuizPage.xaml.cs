@@ -9,12 +9,12 @@ namespace Calculator;
 public partial class QuizPage : ContentPage
 {
 
-    string[] answer1 = {"Demo1", "2.1", "3.1","4.1"};  //maybe make these arrays to store al
-    string[] answer2 = { "Demo2","2.2","3.2","4.2"};
-    string[] answer3 = { "Demo3", "2.3","3.3","4.3" };
-    string[] operand1 = { "2", "4","6","8" };
-    string[] operand2 = { "3","5","7","9" };
-    string[] OperatorValue = { "+","-","*","%" };
+    string[] answer1 = new string[10];           // = {"Demo1", "2.1", "3.1","4.1"};  //maybe make these arrays to store al
+    string[] answer2 = new string[10];         //= { "Demo2","2.2","3.2","4.2"};
+    string[] answer3 = new string[10] ;       // = { "Demo3", "2.3","3.3","4.3" };
+    string[] operand1 = new string[10];       // = { "2", "4","6","8" };
+    string[] operand2 = new string[10];       // = { "3","5","7","9" };
+    string[] OperatorValue = new string[10];  // = { "+","-","*","%" };
     int IterationVal = 0;
 
 
@@ -26,6 +26,22 @@ public partial class QuizPage : ContentPage
         //grab 10 api values and place it in data
 
         MathsExercise[] mathExercises = APICall();
+
+        
+
+        for (int i = 0; i < mathExercises.Length; i++)
+        {
+            answer1[i] = Convert.ToString(mathExercises[i].result);
+            answer2[i] = Convert.ToString(mathExercises[i].fakeResult1);
+            answer3[i] = Convert.ToString(mathExercises[i].fakeResult2);
+            operand1[i] = Convert.ToString(mathExercises[i].operand1);
+            operand2[i] = Convert.ToString(mathExercises[i].operand2);
+            OperatorValue[i] = Convert.ToString(mathExercises[i].operation);
+
+            
+        }
+
+
 
         AssignAPIText(0);
     }
@@ -100,7 +116,7 @@ public partial class QuizPage : ContentPage
     {
         string SelectedValue = Button1.Text;
        // string AnswerValue = answer1; 
-        if (SelectedValue.Contains(answer1[IterationVal]))
+        if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))
         {
             Button1.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
@@ -121,7 +137,7 @@ public partial class QuizPage : ContentPage
     {
         string SelectedValue = Button2.Text;
         // string AnswerValue = answer1; 
-        if (SelectedValue.Contains(answer1[IterationVal]))
+        if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))  //error on this line!!!!!! overflow from iteration value
         {
             Button2.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
@@ -141,7 +157,7 @@ public partial class QuizPage : ContentPage
     {
         string SelectedValue = Button3.Text;
         // string AnswerValue = answer1; 
-        if (SelectedValue.Contains(answer1[IterationVal]))
+        if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))
         {
             Button3.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
@@ -169,7 +185,7 @@ public partial class QuizPage : ContentPage
             unlockButtons();
             //refresh page with next api question set
             IterationVal++;
-            if (IterationVal < 2) {
+            if (IterationVal < 10) {
                 AssignAPIText(IterationVal);
             }
             else
@@ -224,7 +240,7 @@ public partial class QuizPage : ContentPage
     {
         unlockButtons();
         IterationVal++;
-        if (IterationVal < 2)
+        if (IterationVal < 10)
         {
             AssignAPIText(IterationVal);
         }
