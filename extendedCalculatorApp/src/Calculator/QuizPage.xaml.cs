@@ -25,21 +25,23 @@ public partial class QuizPage : ContentPage
 
         //grab 10 api values and place it in data
 
-        APICall();
-
-
+        MathsExercise[] mathExercises = APICall();
 
         AssignAPIText(0);
-
-
-
     }
 
-    async public void APICall()
+    public MathsExercise[] APICall()
     {
-        var httpClient = new HttpClient();
-        var resultJson = await httpClient.GetStringAsync("https://localhost:7172/api/mathspractice");
-        var resultMathExcercise = JsonConvert.DeserializeObject<MathExcercise[]>(resultJson); 
+        ExerciseFetcher exerciseFetcher = new();
+        MathsExercise[] oldMathExercises = exerciseFetcher.GetMathExercises();
+        exerciseFetcher.RefreshExercises();
+
+        MathsExercise[] mathExercises = oldMathExercises;
+
+        // Maybe add a timeout here?
+        while (mathExercises == oldMathExercises)
+            mathExercises = exerciseFetcher.GetMathExercises();
+        return mathExercises;
 
     }
     private void AssignAPIText(int IndexVal)

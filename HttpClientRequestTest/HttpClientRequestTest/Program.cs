@@ -68,7 +68,7 @@ public class MathsExercise
     public double fakeResult1;
     public double fakeResult2;
 
-    public MathsExercise() {}
+    public MathsExercise() { }
     public MathsExercise(double operand1, double operand2, char operation, double result, double fakeResult1, double fakeResult2)
     {
         this.operand1 = operand1;
@@ -82,6 +82,4 @@ public class MathsExercise
     {
         Console.WriteLine(operand1 + " " + operation + " " + operand2 + " = (" + result + ", " + fakeResult1 + ", " + fakeResult2 + ")?");
     }
-
-
 }

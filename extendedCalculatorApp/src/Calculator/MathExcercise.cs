@@ -1,32 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-
+﻿using Newtonsoft.Json;
 namespace Calculator
 {
-    public class MathExcercise
+    class ExerciseFetcher
     {
-        [JsonPropertyName("operand1")]
-        public double operand1 { get; set; }
+        MathsExercise[] mathsExercises = new MathsExercise[0];
 
+        public async void RefreshExercises()
+        {
+            string URL = "https://localhost:7172/api/mathspractice";
+            HttpClient client = new();
 
-        [JsonPropertyName("operand2")]
-        public double operand2 { get; set; }
+            HttpResponseMessage response = client.GetAsync(URL).Result;
 
-        [JsonPropertyName("operation")]
-        public char operation { get; set; }
+            if (response.IsSuccessStatusCode)
+            {
+                HttpContent content = response.Content;
+                string jsonString = await content.ReadAsStringAsync();
 
-        [JsonPropertyName("result")]
-        public double result { get; set; }
+                mathsExercises = JsonConvert.DeserializeObject<MathsExercise[]>(jsonString);
+            }
+            else
+                throw new Exception("Ack! We failed to get a response!");
+        }
 
-        [JsonPropertyName("fakeResult1")]
-        public double fakeResult1 { get; set; }
+        public MathsExercise[] GetMathExercises()
+        {
+            return mathsExercises;
+        }
+    }
 
-        [JsonPropertyName("fakeResult2")]
-        public double fakeResult2 { get; set; }
+    public class MathsExercise
+    {
+        public double operand1;
+        public double operand2;
+        public char operation;
+        public double result;
+        public double fakeResult1;
+        public double fakeResult2;
+
+        public MathsExercise() {}
+        public MathsExercise(double operand1, double operand2, char operation, double result, double fakeResult1, double fakeResult2)
+        {
+            this.operand1 = operand1;
+            this.operand2 = operand2;
+            this.operation = operation;
+            this.result = result;
+            this.fakeResult1 = fakeResult1;
+            this.fakeResult2 = fakeResult2;
+        }
+        public void PrintToConsole()
+        {
+            Console.WriteLine(operand1 + " " + operation + " " + operand2 + " = (" + result + ", " + fakeResult1 + ", " + fakeResult2 + ")?");
+        }
     }
 }
