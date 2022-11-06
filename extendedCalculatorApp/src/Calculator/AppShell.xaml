@@ -24,7 +24,15 @@
 
         </Tab>
     </FlyoutItem>
-    
+
+    <FlyoutItem Title="Quiz Page">
+        <Tab>
+
+            <ShellContent ContentTemplate="{DataTemplate local:QuizPage}"/>
+
+        </Tab>
+    </FlyoutItem>
+
     <MenuItem Text="Light Theme" Clicked="LightThemeMenuItem_Clicked">
        
     </MenuItem>
