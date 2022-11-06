@@ -1,5 +1,5 @@
 using System.Text.Json;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using System.Net.Http;
 using static Calculator.QuizPage;
 //using TodoRest.models;
@@ -9,12 +9,13 @@ namespace Calculator;
 public partial class QuizPage : ContentPage
 {
 
-    string answer1  = "Demo1";  //maybe make these arrays to store al
-    string answer2 = "Demo2";
-    string answer3 = "Demo3";
-    string operand1 = "2";
-    string operand2 = "3";
-    string OperatorValue = "+";
+    string[] answer1 = {"Demo1", "2.1", "3.1","4.1"};  //maybe make these arrays to store al
+    string[] answer2 = { "Demo2","2.2","3.2","4.2"};
+    string[] answer3 = { "Demo3", "2.3","3.3","4.3" };
+    string[] operand1 = { "2", "4","6","8" };
+    string[] operand2 = { "3","5","7","9" };
+    string[] OperatorValue = { "+","-","*","%" };
+    int IterationVal = 0;
 
 
    // public List<MathExcerciseQuestions> Items { get; private set; }
@@ -23,25 +24,79 @@ public partial class QuizPage : ContentPage
 		InitializeComponent();
 
         //grab 10 api values and place it in data
-        
-      //  RefreshDataAsync();
+
+        //  RefreshDataAsync();
 
 
+        AssignAPIText(0);
 
 
-
-        QuestionLabel.Text = $"{operand1} {OperatorValue} {operand2} = ?";
-        Button1.Text = $"A.) {answer1}";
-        Button2.Text = $"B.) {answer2}";
-        Button3.Text = $"C.) {answer3}";
+     //   QuestionLabel.Text = $"{operand1} {OperatorValue} {operand2} = ?";
+     //   Button1.Text = $"A.) {answer1}";
+     //   Button2.Text = $"B.) {answer2}";
+     //   Button3.Text = $"C.) {answer3}";
 
     }
+    private void AssignAPIText(int IndexVal)
+    {
+
+        //IndexVal is the value of the API object index that will contain the specific question
+
+        //first assign the question text box from hte API
+
+        QuestionLabel.Text = $"{operand1[IndexVal]} {OperatorValue[IndexVal]} {operand2[IndexVal]} = ?";
+
+        //Second assign the buttons randomly
+        int val;
+        //string a;
+
+        
+        int i;
+        int breakcondition = 0; //will be used in for loop to be incremented and be the ending condition
+
+        Random r = new Random();
+        val = r.Next(0, 3);     //grab a random starting point of the array 
+        string[] ButtonValues = { answer1[IndexVal], answer2[IndexVal], answer3[IndexVal] };    //assign answers to an array 
+
+        for (i = val; breakcondition < 3; i++)  //iterate through the array from the starting point, using % to not go over the array size limit
+        {
+            val = i % 3;
+           
+            ButtonAssignment(val, ButtonValues[breakcondition]); //assign answers to random spot
+            breakcondition++;
+        }
+
+
+
+
+
+    }
+
+
+    private void ButtonAssignment(int ButtonNumber, string GivenValue)
+    {
+        //This function will recieve a value from 0-2 which will indicate what button will be assigned the givenvalue variable
+        if (ButtonNumber == 0)
+        {
+            Button1.Text = $"A.) {GivenValue}";
+        }
+        else if (ButtonNumber == 1)
+        {
+            Button2.Text = $"B.) {GivenValue}";
+        }
+        else if (ButtonNumber == 2)
+        {
+            Button3.Text = $"C.) {GivenValue}";
+        }
+
+    }
+
 
     private void Button1_Clicked(object sender, EventArgs e)
     {
         string SelectedValue = Button1.Text;
        // string AnswerValue = answer1; 
-        if (SelectedValue.Contains(answer1))
+        if (SelectedValue.Contains(answer1[IterationVal]))
         {
             //display message that currect answer chosen
             NextQuestion(sender,e);
@@ -54,12 +109,32 @@ public partial class QuizPage : ContentPage
 
     private void Button2_Clicked(object sender, EventArgs e)
     {
-
+        string SelectedValue = Button2.Text;
+        // string AnswerValue = answer1; 
+        if (SelectedValue.Contains(answer1[IterationVal]))
+        {
+            //display message that currect answer chosen
+            NextQuestion(sender, e);
+        }
+        else
+        {
+            //display message saying wrong answer chosen
+        }
     }
 
     private void Button3_Clicked(object sender, EventArgs e)
     {
-
+        string SelectedValue = Button3.Text;
+        // string AnswerValue = answer1; 
+        if (SelectedValue.Contains(answer1[IterationVal]))
+        {
+            //display message that currect answer chosen
+            NextQuestion(sender, e);
+        }
+        else
+        {
+            //display message saying wrong answer chosen
+        }
     }
 
     async void NextQuestion(object sender, System.EventArgs e)
@@ -67,6 +142,14 @@ public partial class QuizPage : ContentPage
         if (await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
         {
             //refresh page with next api question set
+            IterationVal++;
+            if (IterationVal < 10) {
+                AssignAPIText(IterationVal);
+            }
+            else
+            {
+                //notify that they have done all the questions available.
+            }
         }
     }
 
