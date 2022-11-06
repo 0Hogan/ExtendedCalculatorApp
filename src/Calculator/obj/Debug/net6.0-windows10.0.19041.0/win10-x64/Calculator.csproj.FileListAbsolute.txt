@@ -344,3 +344,4 @@ C:\Users\micha\Projects\Project2\src\Calculator\obj\Debug\net6.0-windows10.0.190
 C:\Users\micha\Projects\Project2\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\micha\Projects\Project2\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\micha\Projects\Project2\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\micha\Projects\Project2\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

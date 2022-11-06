@@ -1,5 +1,5 @@
 using System.Text.Json;
-//using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.Net.Http;
 using static Calculator.QuizPage;
 //using TodoRest.models;
@@ -25,16 +25,21 @@ public partial class QuizPage : ContentPage
 
         //grab 10 api values and place it in data
 
-        //  RefreshDataAsync();
+        APICall();
+
 
 
         AssignAPIText(0);
 
 
-     //   QuestionLabel.Text = $"{operand1} {OperatorValue} {operand2} = ?";
-     //   Button1.Text = $"A.) {answer1}";
-     //   Button2.Text = $"B.) {answer2}";
-     //   Button3.Text = $"C.) {answer3}";
+
+    }
+
+    async public void APICall()
+    {
+        var httpClient = new HttpClient();
+        var resultJson = await httpClient.GetStringAsync("https://localhost:7172/api/mathspractice");
+        var resultMathExcercise = JsonConvert.DeserializeObject<MathExcercise[]>(resultJson); 
 
     }
     private void AssignAPIText(int IndexVal)
@@ -48,7 +53,7 @@ public partial class QuizPage : ContentPage
 
         //Second assign the buttons randomly
         int val;
-        //string a;
+        
 
         
         int i;
@@ -65,9 +70,6 @@ public partial class QuizPage : ContentPage
             ButtonAssignment(val, ButtonValues[breakcondition]); //assign answers to random spot
             breakcondition++;
         }
-
-
-
 
 
     }
@@ -98,12 +100,18 @@ public partial class QuizPage : ContentPage
        // string AnswerValue = answer1; 
         if (SelectedValue.Contains(answer1[IterationVal]))
         {
+            Button1.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
             NextQuestion(sender,e);
         }
         else
         {
             //display message saying wrong answer chosen
+            Button1.BackgroundColor = Color.FromRgb(200, 15, 15);
+            lockButtons();
+            ButtonTryAgain.IsVisible = true;
+            ButtonSkipToNext.IsVisible = true;
+
         }
     }
 
@@ -113,12 +121,17 @@ public partial class QuizPage : ContentPage
         // string AnswerValue = answer1; 
         if (SelectedValue.Contains(answer1[IterationVal]))
         {
+            Button2.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
             NextQuestion(sender, e);
         }
         else
         {
             //display message saying wrong answer chosen
+            Button2.BackgroundColor = Color.FromRgb(200, 15, 15);
+            lockButtons();
+            ButtonTryAgain.IsVisible = true;
+            ButtonSkipToNext.IsVisible = true;
         }
     }
 
@@ -128,27 +141,39 @@ public partial class QuizPage : ContentPage
         // string AnswerValue = answer1; 
         if (SelectedValue.Contains(answer1[IterationVal]))
         {
+            Button3.BackgroundColor = Color.FromRgb(15, 200, 15);
             //display message that currect answer chosen
             NextQuestion(sender, e);
         }
         else
         {
             //display message saying wrong answer chosen
+            Button3.BackgroundColor = Color.FromRgb(200,15,15);
+            lockButtons();
+            ButtonTryAgain.IsVisible = true;
+            ButtonSkipToNext.IsVisible = true;
         }
     }
 
     async void NextQuestion(object sender, System.EventArgs e)
     {
+        lockButtons();
+
+        ButtonSkipToNext.IsVisible = true;
+
         if (await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
         {
+            ButtonSkipToNext.IsVisible = false;
+            unlockButtons();
             //refresh page with next api question set
             IterationVal++;
-            if (IterationVal < 10) {
+            if (IterationVal < 2) {
                 AssignAPIText(IterationVal);
             }
             else
             {
                 //notify that they have done all the questions available.
+                this.DisplayAlert("All Questions Answered", "Congrats, you have finished all of the questions!", "Close");
             }
         }
     }
@@ -175,7 +200,7 @@ public partial class QuizPage : ContentPage
         return Items;
     }
   */
-
+/*
     public class MathExcerciseQuestions
     {
         public double Operand1 { get; set; }
@@ -185,5 +210,42 @@ public partial class QuizPage : ContentPage
         public double fakeResult1 {get; set;}
         public double fakeResult2 { get; set; }
     }
+*/
+    private void ButtonTryAgain_Clicked(object sender, EventArgs e)
+    {
+        unlockButtons();
+        ButtonSkipToNext.IsVisible = false;
+        ButtonTryAgain.IsVisible = false;
+    }
 
+    private void ButtonSkipToNext_Clicked(object sender, EventArgs e)
+    {
+        unlockButtons();
+        IterationVal++;
+        if (IterationVal < 2)
+        {
+            AssignAPIText(IterationVal);
+        }
+        else
+        {
+            //notify that they have done all the questions available.
+            this.DisplayAlert("All Questions Answered", "Congrats, you have finished all of the questions!","Close");
+        }
+        ButtonSkipToNext.IsVisible = false;
+        ButtonTryAgain.IsVisible = false;
+
+    }
+
+    public void lockButtons()
+    {
+        Button1.IsEnabled=false; Button2.IsEnabled=false; Button3.IsEnabled=false;
+
+    }
+
+    public void unlockButtons()
+    {
+        Button1.IsEnabled = true; Button2.IsEnabled=true; Button3.IsEnabled=true;
+        Button1.BackgroundColor = Color.FromRgb(255, 255, 255); Button2.BackgroundColor = Color.FromRgb(255, 255, 255); Button3.BackgroundColor = Color.FromRgb(255,255,255);
+
+    }
 }

@@ -14,6 +14,8 @@
         <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button1" Clicked="Button1_Clicked"/>
         <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button2" Clicked="Button2_Clicked"/>
         <Button Text="Placeholder for answer 3" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button3" Clicked="Button3_Clicked"/>
+        <Button Text="Try Again" IsVisible="False" x:Name="ButtonTryAgain"  Clicked="ButtonTryAgain_Clicked" />
+        <Button Text="Skip to Next Question" IsVisible="False" x:Name="ButtonSkipToNext" Clicked="ButtonSkipToNext_Clicked"/>
 
 
     </VerticalStackLayout>
