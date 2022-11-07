@@ -3,19 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.QuizPage"
              Title="QuizPage">
+    <ContentPage.Background>
+        <!-- StartPoint defaults to (0,0) -->
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#470B8B"
+                          Offset="0.1" />
+            <GradientStop Color="Purple"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
     <VerticalStackLayout Padding="20">
+        <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+        <HorizontalStackLayout HorizontalOptions="Center" Padding="15">
+                <Button Text="1" CornerRadius="25" IsEnabled="False" WidthRequest="50" HeightRequest="50" MinimumWidthRequest="40"  x:Name="UIB1" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="2" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB2" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="3" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB3" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="4" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB4" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="5" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB5" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="6" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB6" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="7" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB7" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="8" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB8" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="9" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40"  x:Name="UIB9" BackgroundColor="{DynamicResource Light}"/>
+                <Button Text="10" CornerRadius="15" IsEnabled="False" WidthRequest="40" HeightRequest="40" x:Name="UIB10" BackgroundColor="{DynamicResource Light}"/>
+           
+        </HorizontalStackLayout>
+        </ScrollView>
+
         <Label 
             Text="Question: 2 + 4 =?"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             Padding="30"
             x:Name="QuestionLabel"
+            
+            TextColor="White"
+            FontAttributes="Bold"
+            
             />
-        <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button1" Clicked="Button1_Clicked"/>
-        <Button Text="Placeholder for answer 2" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button2" Clicked="Button2_Clicked"/>
-        <Button Text="Placeholder for answer 3" CornerRadius="4" MaximumWidthRequest="250" x:Name="Button3" Clicked="Button3_Clicked"/>
-        <Button Text="Try Again" IsVisible="False" x:Name="ButtonTryAgain"  Clicked="ButtonTryAgain_Clicked" />
-        <Button Text="Skip to Next Question" IsVisible="False" x:Name="ButtonSkipToNext" Clicked="ButtonSkipToNext_Clicked"/>
+        <Button Text="Placeholder for answer 2" CornerRadius="15" MaximumWidthRequest="250" MinimumWidthRequest="250" x:Name="Button1" Clicked="Button1_Clicked"  FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Placeholder for answer 2" CornerRadius="15" MaximumWidthRequest="250" MinimumWidthRequest="250" x:Name="Button2" Clicked="Button2_Clicked"  FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Placeholder for answer 3" CornerRadius="15" MaximumWidthRequest="250" MinimumWidthRequest="250" x:Name="Button3" Clicked="Button3_Clicked"  FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+        
+        <!--buttons for try again and skip-->
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="Try Again" IsVisible="False" x:Name="ButtonTryAgain"  Clicked="ButtonTryAgain_Clicked" />
+            <Button Text="Skip to Next Question" IsVisible="False" x:Name="ButtonSkipToNext" Clicked="ButtonSkipToNext_Clicked"/>
+        </HorizontalStackLayout>
 
 
     </VerticalStackLayout>

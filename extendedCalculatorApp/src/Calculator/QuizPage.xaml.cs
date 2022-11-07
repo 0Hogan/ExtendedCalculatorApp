@@ -2,6 +2,7 @@ using System.Text.Json;
 using Newtonsoft.Json;
 using System.Net.Http;
 using static Calculator.QuizPage;
+using System.Runtime.CompilerServices;
 //using TodoRest.models;
 
 namespace Calculator;
@@ -111,19 +112,104 @@ public partial class QuizPage : ContentPage
 
     }
 
+    public void UIquestionsLayoutUpdate(bool answer, bool skipped,bool selected)
+    {
+        
+        if (IterationVal==0)
+        {
+            LayoutUpdates(UIB1, answer, skipped, selected);
 
+        }else if (IterationVal==1)
+        {
+            LayoutUpdates(UIB2, answer ,skipped, selected);
+        }
+        else if (IterationVal==2)
+        {
+            LayoutUpdates(UIB3, answer,skipped,selected);
+        }
+        else if (IterationVal == 3)
+        {
+            LayoutUpdates(UIB4, answer,skipped,selected);
+        }
+        else if (IterationVal==4)
+        {
+            LayoutUpdates(UIB5, answer,skipped,selected);
+        }
+        else if (IterationVal == 5)
+        {
+            LayoutUpdates(UIB6, answer,skipped,selected);
+        }
+        else if (IterationVal == 6)
+        {
+            LayoutUpdates(UIB7, answer,skipped,selected);
+        }
+        else if (IterationVal == 7)
+        {
+            LayoutUpdates(UIB8, answer,skipped,selected);
+        }
+        else if (IterationVal ==8)
+        {
+            LayoutUpdates(UIB9, answer,skipped,selected);
+        }
+        else if (IterationVal== 9)
+        {
+            LayoutUpdates(UIB10, answer ,skipped,selected);
+        }
+
+      //  UIquestions.backgroundcolor need to change background color of the button
+
+    }
+
+    public void LayoutUpdates(Button UIButton, bool answer,bool skipped,bool selected)
+    {
+
+        if (!skipped && !selected)
+        {
+            if (answer)
+            {
+                UIButton.BackgroundColor = Color.FromRgb(15, 200, 15);
+                UIButton.HeightRequest = 40;
+                UIButton.WidthRequest = 40;
+                UIButton.CornerRadius = 15;
+
+            }
+            else
+            {
+                UIButton.BackgroundColor = Color.FromRgb(200, 15, 15);
+            }
+        }else if (skipped)
+        {
+            UIButton.HeightRequest = 40;
+            UIButton.WidthRequest = 40;
+            UIButton.CornerRadius = 15;
+
+        }
+        if (selected)
+        {
+            UIButton.HeightRequest = 50;
+            UIButton.WidthRequest = 50;
+            UIButton.CornerRadius = 25;
+        }
+    }
     private void Button1_Clicked(object sender, EventArgs e)
     {
         string SelectedValue = Button1.Text;
+
+        
+
+
+
        // string AnswerValue = answer1; 
         if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))
         {
             Button1.BackgroundColor = Color.FromRgb(15, 200, 15);
-            //display message that currect answer chosen
+            UIquestionsLayoutUpdate(true, false, false);
+            //display message that correct answer chosen
             NextQuestion(sender,e);
         }
         else
         {
+            UIquestionsLayoutUpdate(false, false, false);
             //display message saying wrong answer chosen
             Button1.BackgroundColor = Color.FromRgb(200, 15, 15);
             lockButtons();
@@ -140,12 +226,14 @@ public partial class QuizPage : ContentPage
         if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))  //error on this line!!!!!! overflow from iteration value
         {
             Button2.BackgroundColor = Color.FromRgb(15, 200, 15);
+            UIquestionsLayoutUpdate(true, false, false);
             //display message that currect answer chosen
             NextQuestion(sender, e);
         }
         else
         {
             //display message saying wrong answer chosen
+            UIquestionsLayoutUpdate(false, false, false);
             Button2.BackgroundColor = Color.FromRgb(200, 15, 15);
             lockButtons();
             ButtonTryAgain.IsVisible = true;
@@ -160,11 +248,13 @@ public partial class QuizPage : ContentPage
         if (IterationVal < 10 && SelectedValue.Contains(answer1[IterationVal]))
         {
             Button3.BackgroundColor = Color.FromRgb(15, 200, 15);
+            UIquestionsLayoutUpdate(true, false, false);
             //display message that currect answer chosen
             NextQuestion(sender, e);
         }
         else
         {
+            UIquestionsLayoutUpdate(false, false, false);
             //display message saying wrong answer chosen
             Button3.BackgroundColor = Color.FromRgb(200,15,15);
             lockButtons();
@@ -179,13 +269,17 @@ public partial class QuizPage : ContentPage
 
         ButtonSkipToNext.IsVisible = true;
 
-        if (await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
+        if (true)//await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
         {
+           
             ButtonSkipToNext.IsVisible = false;
             unlockButtons();
             //refresh page with next api question set
+          
             IterationVal++;
+           
             if (IterationVal < 10) {
+                UIquestionsLayoutUpdate(false, false, true);
                 AssignAPIText(IterationVal);
             }
             else
@@ -238,10 +332,15 @@ public partial class QuizPage : ContentPage
 
     private void ButtonSkipToNext_Clicked(object sender, EventArgs e)
     {
+        UIquestionsLayoutUpdate(false, true, false);
         unlockButtons();
+      
         IterationVal++;
+
+        
         if (IterationVal < 10)
         {
+            UIquestionsLayoutUpdate(false, false, true);
             AssignAPIText(IterationVal);
         }
         else
@@ -264,6 +363,6 @@ public partial class QuizPage : ContentPage
     {
         Button1.IsEnabled = true; Button2.IsEnabled=true; Button3.IsEnabled=true;
         Button1.BackgroundColor = Color.FromRgb(255, 255, 255); Button2.BackgroundColor = Color.FromRgb(255, 255, 255); Button3.BackgroundColor = Color.FromRgb(255,255,255);
-
+       // UIquestionsLayoutUpdate(false, false, false);
     }
 }

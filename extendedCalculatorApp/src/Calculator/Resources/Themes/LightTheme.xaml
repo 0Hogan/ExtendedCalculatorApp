@@ -11,6 +11,9 @@
     <Color x:Key="TertiaryTextColor">Gray</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
 
+    <Color x:Key="Correct Answer">DarkGreen</Color>
+    <Color x:Key="Wrong Answer">DarkRed</Color>
+
 
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="Light">#b9aaee</Color>
