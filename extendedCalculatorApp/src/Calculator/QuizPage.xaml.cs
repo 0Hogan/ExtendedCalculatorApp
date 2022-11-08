@@ -269,7 +269,7 @@ public partial class QuizPage : ContentPage
 
         ButtonSkipToNext.IsVisible = true;
 
-        if (true)//await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
+        if (await this.DisplayAlert("Correct Answer", "Would you like to go to the next question?", "Yes", "No"))
         {
            
             ButtonSkipToNext.IsVisible = false;
