@@ -16,7 +16,14 @@
             ContentTemplate= "{DataTemplate local:AdvancedCalculatorPage}"
             Route="AdvancedCalculator"
             />
+    <FlyoutItem Title="History Page">
+        <Tab>
 
+            <ShellContent ContentTemplate="{DataTemplate local:HistoryPage}"/>
+
+        </Tab>
+    </FlyoutItem>
+    
     <FlyoutItem Title="About Page">
         <Tab>
 
