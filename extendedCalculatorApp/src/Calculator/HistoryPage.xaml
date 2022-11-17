@@ -4,7 +4,8 @@
              x:Class="Calculator.HistoryPage"
              Title="HistoryPage"       
              xmlns:viewmodel="clr-namespace:Calculator.ViewModel"
-             x:DataType="viewmodel:HistoryViewModel">
+             x:DataType="viewmodel:HistoryViewModel"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
   
 
     <ListView ItemsSource="{Binding PreviousCalculations}">
@@ -20,12 +21,29 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
+                        <Border 
+                            StrokeThickness="4"
+                            StrokeShape="RoundRectangle 40,0,0,40"
+                            
+                            Padding="16,8"
+                            HorizontalOptions="Center"
+                            BackgroundColor="{DynamicResource PrimaryColor}">
 
-                        <Label Grid.Column="1"
+
+                            <Border.Stroke>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="Orange"
+                          Offset="0.1" />
+                                    <GradientStop Color="Brown"
+                          Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Stroke>
+                            
+                            <Label Grid.Column="1"
                            Text= "{Binding }" 
-                               
+                            TextColor="{DynamicResource PrimaryTextColor}"
                            FontAttributes="Bold" />
-
+                        </Border>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

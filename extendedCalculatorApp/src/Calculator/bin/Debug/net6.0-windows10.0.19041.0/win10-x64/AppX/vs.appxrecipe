@@ -10,14 +10,14 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>30EE36AA-090D-4EA0-9082-6409A17C5C10</PackageIdentityName>
     <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>984C2B2675628BC395021A3C87A190E5702254BC1D8C78EFAB39823DDA46FDF8</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>30EE36AA-090D-4EA0-9082-6409A17C5C10_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>30EE36AA-090D-4EA0-9082-6409A17C5C10_9zz4h110yvjzm!App</RegisteredUserModeAppID>
@@ -26,28 +26,28 @@
     <RegisteredVersion>1.0.0.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-11-17T21:27:30.350</Modified>
+      <Modified>2022-11-17T23:41:19.137</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-11-17T21:27:29.418</Modified>
+      <Modified>2022-11-17T23:41:18.695</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.runtimeconfig.json">
       <PackagePath>Calculator.runtimeconfig.json</PackagePath>
-      <Modified>2022-11-17T20:40:32.544</Modified>
+      <Modified>2022-11-17T23:09:03.722</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.dll">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.dll">
       <PackagePath>Calculator.dll</PackagePath>
-      <Modified>2022-11-17T21:27:27.986</Modified>
+      <Modified>2022-11-17T23:41:17.575</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Calculator.exe</PackagePath>
-      <Modified>2022-11-17T21:27:28.022</Modified>
+      <Modified>2022-11-17T23:41:17.584</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\micha\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.9\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1069,9 +1069,9 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-07-19T16:53:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.deps.json">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Calculator.deps.json">
       <PackagePath>Calculator.deps.json</PackagePath>
-      <Modified>2022-11-17T21:27:30.141</Modified>
+      <Modified>2022-11-17T23:41:18.992</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.536\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1085,181 +1085,181 @@
       <PackagePath>Microsoft.Maui.pri</PackagePath>
       <Modified>2022-09-09T07:30:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\Resources\Raw\AboutAssets.txt">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
-      <Modified>2022-11-17T19:59:39.034</Modified>
+      <Modified>2022-11-17T23:08:14.571</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-100.png">
       <PackagePath>appiconfgSplashScreen.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.231</Modified>
+      <Modified>2022-11-17T23:08:29.223</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-125.png">
       <PackagePath>appiconfgSplashScreen.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.249</Modified>
+      <Modified>2022-11-17T23:08:29.224</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-150.png">
       <PackagePath>appiconfgSplashScreen.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.272</Modified>
+      <Modified>2022-11-17T23:08:29.225</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-200.png">
       <PackagePath>appiconfgSplashScreen.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.307</Modified>
+      <Modified>2022-11-17T23:08:29.226</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-400.png">
       <PackagePath>appiconfgSplashScreen.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.435</Modified>
+      <Modified>2022-11-17T23:08:29.227</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2022-11-17T19:59:39.034</Modified>
+      <Modified>2022-11-17T23:08:29.194</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2022-11-17T19:59:39.034</Modified>
+      <Modified>2022-11-17T23:08:29.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2022-11-17T20:40:29.524</Modified>
+      <Modified>2022-11-17T23:08:29.197</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.809</Modified>
+      <Modified>2022-11-17T23:08:29.198</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.826</Modified>
+      <Modified>2022-11-17T23:08:29.199</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.838</Modified>
+      <Modified>2022-11-17T23:08:29.199</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.860</Modified>
+      <Modified>2022-11-17T23:08:29.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.938</Modified>
+      <Modified>2022-11-17T23:08:29.201</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.541</Modified>
+      <Modified>2022-11-17T23:08:29.201</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.546</Modified>
+      <Modified>2022-11-17T23:08:29.202</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.550</Modified>
+      <Modified>2022-11-17T23:08:29.202</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.556</Modified>
+      <Modified>2022-11-17T23:08:29.203</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.563</Modified>
+      <Modified>2022-11-17T23:08:29.203</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.629</Modified>
+      <Modified>2022-11-17T23:08:29.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.636</Modified>
+      <Modified>2022-11-17T23:08:29.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.646</Modified>
+      <Modified>2022-11-17T23:08:29.205</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.660</Modified>
+      <Modified>2022-11-17T23:08:29.205</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.682</Modified>
+      <Modified>2022-11-17T23:08:29.206</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.596</Modified>
+      <Modified>2022-11-17T23:08:29.207</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.600</Modified>
+      <Modified>2022-11-17T23:08:29.207</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.605</Modified>
+      <Modified>2022-11-17T23:08:29.208</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.612</Modified>
+      <Modified>2022-11-17T23:08:29.208</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.622</Modified>
+      <Modified>2022-11-17T23:08:29.210</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.568</Modified>
+      <Modified>2022-11-17T23:08:29.210</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.573</Modified>
+      <Modified>2022-11-17T23:08:29.211</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.578</Modified>
+      <Modified>2022-11-17T23:08:29.211</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.583</Modified>
+      <Modified>2022-11-17T23:08:29.212</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.590</Modified>
+      <Modified>2022-11-17T23:08:29.213</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.689</Modified>
+      <Modified>2022-11-17T23:08:29.213</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.700</Modified>
+      <Modified>2022-11-17T23:08:29.214</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.712</Modified>
+      <Modified>2022-11-17T23:08:29.215</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.728</Modified>
+      <Modified>2022-11-17T23:08:29.215</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.768</Modified>
+      <Modified>2022-11-17T23:08:29.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.566</Modified>
+      <Modified>2022-11-17T23:08:29.217</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.608</Modified>
+      <Modified>2022-11-17T23:08:29.218</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.666</Modified>
+      <Modified>2022-11-17T23:08:29.219</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2022-11-17T20:40:29.748</Modified>
+      <Modified>2022-11-17T23:08:29.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\micha\Source\Projects\HW3-1\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\micha\project\hw3v5\extendedCalculatorApp\src\Calculator\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2022-11-17T20:40:30.002</Modified>
+      <Modified>2022-11-17T23:08:29.222</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
