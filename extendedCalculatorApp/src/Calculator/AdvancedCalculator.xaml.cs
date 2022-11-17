@@ -5,13 +5,14 @@ namespace Calculator;
 public partial class AdvancedCalculatorPage : ContentPage
 {
 
-    public AdvancedCalculatorPage()
+    public AdvancedCalculatorPage(ViewModel.HistoryViewModel hvm)
     {
         InitializeComponent();
         OnClear(this, null);
         inputString = "0";
         infixExpression = "0";
         onNumberInputClearResult = true;
+        BindingContext = hvm;
     }
 
     bool onNumberInputClearResult = true; // Used to determine when to keep the result of the immediately previous operation to use it in the current operation.
@@ -92,7 +93,7 @@ public partial class AdvancedCalculatorPage : ContentPage
     {
         infixExpression = "0";
         inputString = "0";
-        this.CurrentCalculation.Text = "0";
+        this.CurrentCalculation.Text = CurrentCalculation + " = " + this.resultText.Text;
         this.resultText.Text = "0";
         onNumberInputClearResult = true;
     }

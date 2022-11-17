@@ -24,9 +24,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AdvancedCalculatorPage>();
 		builder.Services.AddSingleton<AdvancedCalculatorViewModel>();
 
-        //builder.Services.AddTransient<AboutPage>();
-        //builder.Services.AddTransient<AboutViewModel>();	//I dont think we want to use a transient since it is created and deleted every time navigated to and from
-
+		builder.Services.AddSingleton<HistoryPage>();
+		builder.Services.AddSingleton<HistoryViewModel>();
 
 
         return builder.Build();

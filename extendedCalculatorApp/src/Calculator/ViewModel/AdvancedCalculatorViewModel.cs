@@ -5,7 +5,7 @@ namespace Calculator.ViewModel
     public partial class AdvancedCalculatorViewModel : ObservableObject
     {
 
-
+        
 
         
     }
