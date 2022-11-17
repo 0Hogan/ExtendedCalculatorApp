@@ -12,7 +12,6 @@
                FontSize="22"
                LineBreakMode="NoWrap"
                Grid.ColumnSpan="4"
-               Text=""
                HorizontalTextAlignment="End"
                VerticalTextAlignment="Start"
                Grid.Row="0"
