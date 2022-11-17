@@ -285,7 +285,7 @@ public partial class QuizPage : ContentPage
             else
             {
                 //notify that they have done all the questions available.
-                this.DisplayAlert("All Questions Answered", "Congrats, you have finished all of the questions!", "Close");
+                await this.DisplayAlert("All Questions Answered", "Congrats, you have finished all of the questions!", "Close");
             }
         }
     }
