@@ -35,6 +35,7 @@ public partial class AdvancedCalculatorPage : ContentPage
         infixExpression += pressed;
         inputString += pressed;
 
+        this.CurrentCalculation.Text = infixExpression;
         this.resultText.Text += pressed;
     }
 
@@ -86,6 +87,7 @@ public partial class AdvancedCalculatorPage : ContentPage
         }
 
         inputString += pressed;
+        this.CurrentCalculation.Text = infixExpression;
         this.resultText.Text += pressed;
     }
 
@@ -93,7 +95,7 @@ public partial class AdvancedCalculatorPage : ContentPage
     {
         infixExpression = "0";
         inputString = "0";
-        this.CurrentCalculation.Text = CurrentCalculation + " = " + this.resultText.Text;
+        this.CurrentCalculation.Text = infixExpression;
         this.resultText.Text = "0";
         onNumberInputClearResult = true;
     }
@@ -134,6 +136,7 @@ public partial class AdvancedCalculatorPage : ContentPage
             inputString += "×(-1)";
             this.resultText.Text += "×(-1)";
         }
+        this.CurrentCalculation.Text = infixExpression;
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -146,6 +149,7 @@ public partial class AdvancedCalculatorPage : ContentPage
         inputString += '%';
         infixExpression += "/100";
         this.resultText.Text += "%";
+        this.CurrentCalculation.Text = infixExpression;
     }
 
 }
