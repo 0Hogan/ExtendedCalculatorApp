@@ -10,6 +10,8 @@ namespace Calculator.ViewModel
         public HistoryViewModel()
         {
             PreviousCalculations = new();
+            lastCalculation = "0";
+            lastResult = "0";
         }
 
         [ObservableProperty]
@@ -18,12 +20,22 @@ namespace Calculator.ViewModel
         [ObservableProperty]
         string lastCalculation;
 
+        [ObservableProperty]
+        string lastResult;
+
+
         [RelayCommand]
         void Add()
         {
-            if (string.IsNullOrWhiteSpace(LastCalculation))
+            string expression = LastResult; // Yes. This is weird.
+            //string result = Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(LastResult));
+
+            string output = expression;// + " = " + result;
+            
+            if (string.IsNullOrWhiteSpace(LastResult) || LastResult == "0")
                 return;
-            PreviousCalculations.Add(LastCalculation);
+            PreviousCalculations.Add(LastResult);
+            LastCalculation = "";
         }
 
         [RelayCommand]
