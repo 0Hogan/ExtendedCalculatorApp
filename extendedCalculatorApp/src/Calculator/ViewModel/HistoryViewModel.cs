@@ -16,7 +16,7 @@ namespace Calculator.ViewModel
 
         // List of strings with which to track the previously calculated expressions.
         [ObservableProperty]
-        ObservableCollection<string> previousCalculations;
+        ObservableCollection<string> previousCalculations; 
 
         // The last expression.
         [ObservableProperty]
@@ -45,6 +45,10 @@ namespace Calculator.ViewModel
             PreviousCalculations.Add(output);
             
             LastCalculation = output;
+
+
+            //
+
         }
 
         // There for later, but not needed at this point in time.

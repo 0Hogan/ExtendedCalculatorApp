@@ -2,10 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.HistoryPage"
-             Title="HistoryPage">
-    <ListView>
+             Title="HistoryPage"       
+             xmlns:viewmodel="clr-namespace:Calculator.ViewModel"
+             x:DataType="viewmodel:HistoryViewModel">
+  
+
+    <ListView ItemsSource="{Binding PreviousCalculations}">
         <ListView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate x:DataType="{x:Type x:String}">
                 <ViewCell>
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
@@ -16,9 +20,10 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                      
+
                         <Label Grid.Column="1"
-                           Text="{Binding History}"
+                           Text= "{Binding }" 
+                               
                            FontAttributes="Bold" />
 
                     </Grid>
@@ -26,6 +31,6 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    
+
     
 </ContentPage>

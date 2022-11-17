@@ -1,5 +1,6 @@
 namespace Calculator;
 
+
 public partial class AppShell : Shell
 {
 	public AppShell()
@@ -8,6 +9,8 @@ public partial class AppShell : Shell
 
 		Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
 	}
+
+    
 
 	private void LightThemeMenuItem_Clicked(object sender, EventArgs e)
 	{
