@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage x:Class="Calculator.MainPage"
-            xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Calculator.ViewModel"
+             x:DataType="viewmodel:HistoryViewModel"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
@@ -9,6 +11,7 @@
           ColumnDefinitions="*,*,*,*">
 
         <Label x:Name="CurrentCalculation"
+               Text="{Binding LastCalculation, Mode=TwoWay}"
                FontSize="22"
                LineBreakMode="NoWrap"
                Grid.ColumnSpan="4"
@@ -18,7 +21,8 @@
                TextColor="{DynamicResource PrimaryTextColor}"/>
 
         <Label x:Name="resultText"
-               FontSize="64" FontAttributes="Bold" Text="0"
+               FontSize="64" FontAttributes="Bold" 
+               Text="{Binding LastResult, Mode=TwoWay}"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
                LineBreakMode="NoWrap" Grid.ColumnSpan="4" 
@@ -78,11 +82,9 @@
 
 
         <Button Text="=" Grid.Row="5" Grid.Column="3" 
-               Clicked="OnCalculate" />
+               Clicked="OnCalculate" 
+               Command="{Binding AddCommand}" />
 
 
-        
-        
-        
     </Grid>
 </ContentPage>

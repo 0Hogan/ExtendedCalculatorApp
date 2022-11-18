@@ -1,15 +1,17 @@
-﻿namespace Calculator;
+﻿using Calculator.ViewModel;
+
+namespace Calculator;
 
 public partial class MainPage : ContentPage
 {
-    
-    public MainPage()
+    public MainPage(HistoryViewModel Historyviewmodel)
     {
         InitializeComponent();
         OnClear(this, null);
         inputString = "0";
         infixExpression = "0";
         onNumberInputClearResult = true;
+        BindingContext = Historyviewmodel;
     }
 
     bool onNumberInputClearResult = true; // Used to determine when to keep the result of the immediately previous operation to use it in the current operation.
@@ -33,6 +35,8 @@ public partial class MainPage : ContentPage
         inputString += pressed;
 
         this.resultText.Text += pressed;
+        this.CurrentCalculation.Text = infixExpression;
+
     }
 
     void OnSelectOperator(object sender, EventArgs e)
@@ -78,6 +82,8 @@ public partial class MainPage : ContentPage
         
         inputString += pressed;
         this.resultText.Text += pressed;
+        this.CurrentCalculation.Text = infixExpression;
+
     }
 
     void OnClear(object sender, EventArgs e)
@@ -87,6 +93,7 @@ public partial class MainPage : ContentPage
         this.CurrentCalculation.Text = "0";
         this.resultText.Text = "0";
         onNumberInputClearResult = true;
+        this.CurrentCalculation.Text = infixExpression;
     }
 
     void OnCalculate(object sender, EventArgs e)
@@ -125,6 +132,7 @@ public partial class MainPage : ContentPage
             inputString += "×(-1)";
             this.resultText.Text += "×(-1)";
         }
+        this.CurrentCalculation.Text = infixExpression;
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -137,7 +145,8 @@ public partial class MainPage : ContentPage
         inputString += '%';
         infixExpression += "/100";
         this.resultText.Text += "%";
+        this.CurrentCalculation.Text = infixExpression;
     }
 
-    
+
 }

@@ -46,9 +46,6 @@ namespace Calculator.ViewModel
             
             LastCalculation = output;
 
-
-            //
-
         }
 
         // There for later, but not needed at this point in time.
