@@ -8,18 +8,8 @@ namespace Calculator.ViewModel
 {
     public partial class HistoryViewModel : ObservableObject
     {
-        PreviousCalculationsDatabase previousCalculationsDatabase = new();
-
-        public HistoryViewModel()
-        {
-            PreviousCalculations = new();
-
-            previousCalculationsDatabase.Init();
-            // @TODO: Add a database call to load all of the previous calculations into PreviousCalculations...
-
-            lastCalculation = "0";
-            lastResult = "0";
-        }
+        PreviousCalculationsDatabase previousCalculationsDatabase;
+        bool dbHistoryIsLoaded = false;
 
         // List of strings with which to track the previously calculated expressions.
         [ObservableProperty]
@@ -32,6 +22,20 @@ namespace Calculator.ViewModel
         // The last result (well, ideally, but it doesn't update quickly enough, so it's actually a variant of the last expression)
         [ObservableProperty]
         string lastResult;
+
+
+
+        public HistoryViewModel(PreviousCalculationsDatabase database)
+        {
+            previousCalculationsDatabase = database;
+            PreviousCalculations = new();
+
+            //previousCalculationsDatabase.Init();
+            // @TODO: Add a database call to load all of the previous calculations into PreviousCalculations...
+
+            lastCalculation = "0";
+            lastResult = "0";
+        }
 
         // Adds the last expression and its answer to previousCalculations.
         [RelayCommand]
@@ -57,14 +61,26 @@ namespace Calculator.ViewModel
 
         }
 
+        async void LoadHistoryAsync()
+        {
+            var previousCalculationsList = await previousCalculationsDatabase.GetItemsAsync();
+
+            foreach (var calculation in previousCalculationsList)
+            {
+                previousCalculations.Add(calculation.Calculation);
+            }
+            dbHistoryIsLoaded = true;
+        }
+
         // There for later, but not needed at this point in time.
         [RelayCommand]
-        void ClearHistory()
+        void ClearHistoryAsync()
         {
 
             // @TODO: Add in the functionality to remove all entries from the database.
 
             PreviousCalculations?.Clear();
+            dbHistoryIsLoaded = true;
         }
 
     }
@@ -95,13 +111,12 @@ namespace Calculator.ViewModel
             var result = await Database.CreateTableAsync<PreviousCalculation>();
         }
 
-        /* As of yet unimplemented database accessors.
-        public async Task<List<TodoItem>> GetItemsAsync()
+        public async Task<List<PreviousCalculation>> GetItemsAsync()
         {
             await Init();
-            return await Database.Table<TodoItem>().ToListAsync();
+            return await Database.Table<PreviousCalculation>().ToListAsync();
         }
-
+/*
         public async Task<List<TodoItem>> GetItemsNotDoneAsync()
         {
             await Init();
