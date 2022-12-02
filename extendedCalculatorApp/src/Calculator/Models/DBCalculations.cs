@@ -9,12 +9,12 @@ using SQLite;
 
 namespace Calculator.Models
 {
-    [Table("Calculations")]
+ 
     public class DBCalculations
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        [MaxLength(250)]
+       
         public string Calculation { get; set; }
 
     }

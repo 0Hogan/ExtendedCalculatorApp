@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj": {}
+    "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj": {
+    "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
+        "projectUniqueName": "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
         "projectName": "Calculator",
-        "projectPath": "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
+        "projectPath": "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\obj\\",
+        "outputPath": "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

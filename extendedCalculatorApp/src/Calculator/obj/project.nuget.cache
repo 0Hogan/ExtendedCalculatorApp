@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l61zqf0vPt5TOWbqdbfA+N1LRXq7lr2ROXnQLZkfJLnzK+wnav7dVw+qLOyv4Rdjqm1BeUEnOoNbwGBE8uHexg==",
+  "dgSpecHash": "E60pxOwUFu41/MVKazbcma8d6dPHMBlXbziFBg+OjkiZkaGgiGCj6sy0LadxoHFijyQ8Xk7cc/HGmJ5sFkb0bA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\micha\\MobileProjects\\Project4\\version\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
+  "projectFilePath": "C:\\Users\\micha\\MobileProjects\\Project4finall\\extendedCalculatorApp\\src\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
