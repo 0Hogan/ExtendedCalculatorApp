@@ -4,7 +4,9 @@ using SQLite;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Calculator.Models;
-using static Java.Util.Jar.Attributes;
+using Calculator.Data;
+using System.Security.Cryptography;
+
 
 
 namespace Calculator.ViewModel
@@ -19,29 +21,29 @@ namespace Calculator.ViewModel
             PreviousCalculations = new();
             lastCalculation = "0";
             lastResult = "0";
+
+            Init();
         }
 
 
-        private SQLiteAsyncConnection conn;
+        //private SQLiteAsyncConnection conn;
+
+        CalculationsDatabase conn;
         private async void Init()
         {
             if (conn != null)
             {
-                //need to initialize the class with all the data maybe? 
                 return;
 
 
             }
 
-
-            conn = new SQLiteAsyncConnection(_dbPath);
-            await conn.CreateTableAsync<DBCalculations>();
-
+            conn = new CalculationsDatabase();  //create teh database link
 
 
             //update the viewmodel data with the database information
             List<DBCalculations> calculations = new List<DBCalculations>();
-            calculations = await conn.Table<DBCalculations>().ToListAsync();
+            calculations = await conn.GetItemsAsync();
             if (calculations.Count > 0)
             {
                 for (int i = 0; i < calculations.Count(); i++)
@@ -75,6 +77,9 @@ namespace Calculator.ViewModel
         [RelayCommand]
         async void Add()
         {
+
+            Init();
+
             string expression = LastResult; // Yes. This is weird.
             string result = Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(LastCalculation)); // Yes. This is dumb.
 
@@ -86,16 +91,14 @@ namespace Calculator.ViewModel
             if (string.IsNullOrWhiteSpace(expression) || expression == "0")
                 return;
 
-            // Assuming it checks out, add it to the history of calculations.
-            PreviousCalculations.Add(output);
+         
 
-
-
-            Init();
 
             // update the database with the newly added calculation
-            await conn.InsertAsync(new DBCalculations { Calculation = output });
+            await conn.SaveItemAsync(new DBCalculations { Calculation = output });
 
+            // Assuming it checks out, add it to the history of calculations.
+            PreviousCalculations.Add(output);
 
 
             //should then add the output to the database
