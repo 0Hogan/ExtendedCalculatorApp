@@ -116,6 +116,9 @@ namespace Calculator.ViewModel
         [RelayCommand]
         void ClearHistory()
         {
+
+
+
             PreviousCalculations?.Clear();
         }
 

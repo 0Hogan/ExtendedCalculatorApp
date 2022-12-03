@@ -6,12 +6,24 @@
              xmlns:viewmodel="clr-namespace:Calculator.ViewModel"
              x:DataType="viewmodel:HistoryViewModel"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
-  
 
-    <ListView ItemsSource="{Binding PreviousCalculations}">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+      
+        <Button Text="Clear History" Grid.Row="1" Grid.Column="1" BackgroundColor="White">
+            
+        </Button>
+        
+
+        <ListView ItemsSource="{Binding PreviousCalculations}">
+        
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="{x:Type x:String}">
                 <ViewCell>
+                    
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -49,6 +61,8 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    </Grid>
 
-    
+
+
 </ContentPage>

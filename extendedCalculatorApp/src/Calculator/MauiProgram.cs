@@ -29,8 +29,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<HistoryViewModel>();
 
         // Add this code
-        string dbPath = FileAccessHelper.GetLocalFilePath("calculations.db3");
-        builder.Services.AddSingleton<HistoryViewModel>(s => ActivatorUtilities.CreateInstance<HistoryViewModel>(s, dbPath));
+        //string dbPath = FileAccessHelper.GetLocalFilePath("calculations.db3");
+        //builder.Services.AddSingleton<HistoryViewModel>(s => ActivatorUtilities.CreateInstance<HistoryViewModel>(s, dbPath));
 
 
 

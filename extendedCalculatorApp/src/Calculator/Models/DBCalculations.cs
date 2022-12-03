@@ -13,7 +13,7 @@ namespace Calculator.Models
     public class DBCalculations
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int ID { get; set; }
        
         public string Calculation { get; set; }
 
