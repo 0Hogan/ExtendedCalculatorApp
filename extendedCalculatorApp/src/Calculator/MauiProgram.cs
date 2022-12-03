@@ -1,4 +1,5 @@
-﻿using Calculator.ViewModel;
+﻿using Calculator.Data;
+using Calculator.ViewModel;
 //using Calculator.Services;
 
 namespace Calculator;
@@ -27,6 +28,8 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<HistoryPage>();
 		builder.Services.AddSingleton<HistoryViewModel>();
+
+        builder.Services.AddSingleton<PreviousCalculationsDatabase>();
 
         return builder.Build();
 	}

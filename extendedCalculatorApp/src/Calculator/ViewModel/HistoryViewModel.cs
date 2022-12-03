@@ -56,7 +56,7 @@ namespace Calculator.ViewModel
             // Assuming it checks out, add it to the history of calculations.
             PreviousCalculations.Add(output);
 
-            // @TODO: Add a database call to ADD this calculation to the database as a new entry.
+
             await previousCalculationsDatabase.SaveItemAsync(new PreviousCalculation(0, output));
 
             LastCalculation = output;
@@ -74,7 +74,8 @@ namespace Calculator.ViewModel
             dbHistoryIsLoaded = true;
         }
 
-        // There for later, but not needed at this point in time.
+
+
         [RelayCommand]
         async void ClearHistoryAsync()
         {
