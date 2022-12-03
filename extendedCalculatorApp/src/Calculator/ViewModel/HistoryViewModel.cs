@@ -8,8 +8,8 @@ namespace Calculator.ViewModel
 {
     public partial class HistoryViewModel : ObservableObject
     {
-        PreviousCalculationsDatabase previousCalculationsDatabase;
-        bool dbHistoryIsLoaded = false;
+        PreviousCalculationsDatabase previousCalculationsDatabase = new();
+        public bool dbHistoryIsLoaded = false;
 
         // List of strings with which to track the previously calculated expressions.
         [ObservableProperty]
@@ -25,13 +25,12 @@ namespace Calculator.ViewModel
 
 
 
-        public HistoryViewModel(PreviousCalculationsDatabase database)
+        public HistoryViewModel()
         {
-            previousCalculationsDatabase = database;
             PreviousCalculations = new();
 
-            //previousCalculationsDatabase.Init();
-            // @TODO: Add a database call to load all of the previous calculations into PreviousCalculations...
+            // Load any calculation history from previous sessions.
+            LoadHistoryAsync();
 
             lastCalculation = "0";
             lastResult = "0";
@@ -39,7 +38,7 @@ namespace Calculator.ViewModel
 
         // Adds the last expression and its answer to previousCalculations.
         [RelayCommand]
-        void Add()
+        async void Add()
         {
             string expression = LastResult; // Yes. This is weird.
             string result = Calculator.EvaluatePrefixExpression(Calculator.InfixToPrefix(LastCalculation)); // Yes. This is dumb.
@@ -56,6 +55,7 @@ namespace Calculator.ViewModel
             PreviousCalculations.Add(output);
 
             // @TODO: Add a database call to ADD this calculation to the database as a new entry.
+            await previousCalculationsDatabase.SaveItemAsync(new PreviousCalculation(0, output));
 
             LastCalculation = output;
 
@@ -74,7 +74,7 @@ namespace Calculator.ViewModel
 
         // There for later, but not needed at this point in time.
         [RelayCommand]
-        void ClearHistoryAsync()
+        async void ClearHistoryAsync()
         {
 
             // @TODO: Add in the functionality to remove all entries from the database.
@@ -90,6 +90,17 @@ namespace Calculator.ViewModel
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Calculation { get; set; }
+
+        public PreviousCalculation()
+        {
+            ID = 0;
+            Calculation = "";
+        }
+        public PreviousCalculation(int iD, string calculation)
+        {
+            ID = iD;
+            Calculation = calculation;
+        }
     }
 
     public class PreviousCalculationsDatabase
@@ -111,46 +122,34 @@ namespace Calculator.ViewModel
             var result = await Database.CreateTableAsync<PreviousCalculation>();
         }
 
+        // Fetch all previous calculations from the database.
         public async Task<List<PreviousCalculation>> GetItemsAsync()
         {
             await Init();
             return await Database.Table<PreviousCalculation>().ToListAsync();
         }
-/*
-        public async Task<List<TodoItem>> GetItemsNotDoneAsync()
+
+        // Add an item to the database. It's ID should be 0, coming into this function.
+        public async Task<int> SaveItemAsync(PreviousCalculation calculation)
         {
             await Init();
-            return await Database.Table<TodoItem>().Where(t => t.Done).ToListAsync();
-
-            // SQL queries are also possible
-            //return await Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-        }
-
-        public async Task<TodoItem> GetItemAsync(int id)
-        {
-            await Init();
-            return await Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-        }
-
-        public async Task<int> SaveItemAsync(TodoItem item)
-        {
-            await Init();
-            if (item.ID != 0)
+            if (calculation.ID != 0)
             {
-                return await Database.UpdateAsync(item);
+                return await Database.UpdateAsync(calculation);
             }
             else
             {
-                return await Database.InsertAsync(item);
+                return await Database.InsertAsync(calculation);
             }
         }
 
+        /*
         public async Task<int> DeleteItemAsync(TodoItem item)
         {
             await Init();
             return await Database.DeleteAsync(item);
         }
-            */
+        */
 
     }
 }
