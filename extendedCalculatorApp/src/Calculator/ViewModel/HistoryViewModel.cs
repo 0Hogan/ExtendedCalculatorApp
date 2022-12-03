@@ -76,9 +76,8 @@ namespace Calculator.ViewModel
         [RelayCommand]
         async void ClearHistoryAsync()
         {
-
-            // @TODO: Add in the functionality to remove all entries from the database.
-
+            dbHistoryIsLoaded = false;
+            await previousCalculationsDatabase.DeleteHistoryAsync();
             PreviousCalculations?.Clear();
             dbHistoryIsLoaded = true;
         }
@@ -143,13 +142,12 @@ namespace Calculator.ViewModel
             }
         }
 
-        /*
-        public async Task<int> DeleteItemAsync(TodoItem item)
+        // Clear the database.
+        public async Task<int> DeleteHistoryAsync()
         {
             await Init();
-            return await Database.DeleteAsync(item);
+            return await Database.DeleteAllAsync<PreviousCalculation>();
         }
-        */
 
     }
 }
